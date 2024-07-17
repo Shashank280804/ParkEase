@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 
 
 class LicensePlate(db.Model):
-    __tablename__ ='licenseplate'
+    __tablename__ ='licensceplate'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(20), nullable=False)
     time = db.Column(db.String(20), nullable=False)
@@ -38,7 +38,7 @@ class Vehicle(db.Model):
 with app.app_context():
     db.create_all()
     
-harcascade = "PMS/model/haarcascade_russian_plate_number.xml"
+harcascade = "C:\\Shashank\\Shashank\\AI Plate recognition\\PMS\\model\\haarcascade_russian_plate_number.xml"
 
 cap = cv2.VideoCapture(0)
 
@@ -211,13 +211,11 @@ state_mapping = {
     'pY': 'Puducherry',
     'Py': 'Puducherry',
     'py': 'Puducherry',
-
-    # Add more state codes as needed
+    
 }
 
-# Create an empty DataFrame to store the data
 columns = ['date', 'time', 'state', 'number']
-# df = pd.DataFrame(columns=columns)
+
 
 plates_path = 'PMS/plates'
 while True:

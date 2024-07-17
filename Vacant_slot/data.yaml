@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['Empty', 'Empty-Filled', 'Filled', 'empty', 'occupied']
+
+roboflow:
+  workspace: ai-training-mevw9
+  project: parking-detection-mitok
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/ai-training-mevw9/parking-detection-mitok/dataset/2

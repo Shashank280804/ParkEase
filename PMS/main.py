@@ -159,7 +159,8 @@ def check_hash(user_hash, password):
 @parking_system.route("/")
 def home():
     vehicle_list = Vehicle.query.all()  # Get all vehicle information from table.
-    return render_template('index.html', user_logged_in=current_user.is_authenticated, v_list=vehicle_list)
+    lis_list = LicensePlate.query.all()
+    return render_template('index.html', user_logged_in=current_user.is_authenticated, v_list=vehicle_list, l_list=lis_list)
 
 
 @parking_system.route("/profile")
