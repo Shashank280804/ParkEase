@@ -1,4 +1,3 @@
-
 {% include "header.html" %}
 <div class="veh-div">
   <div class="container-fluid">
@@ -20,19 +19,19 @@
       </thead>
       <tbody>
         {% for veh in v_list %}
-        {% if veh.owner_id == current_user.id %}
-        <tr>
-          <td>{{ veh.rfid_no }}</td>
-          <td>{{ veh.vehicle_type }}</td>
-          <td>{{ veh.vehicle_plate }}</td>
-        </tr>
-        {% endif %}
+          {% if veh.owner_id == current_user.id %}
+            <tr>
+              <td>{{ veh.rfid_no }}</td>
+              <td>{{ veh.vehicle_type }}</td>
+              <td>{{ veh.vehicle_plate }}</td>
+            </tr>
+          {% endif %}
         {% endfor %}
       </tbody>
     </table>
     <div class="row">
       {% if v_list|length == 0 %}
-      <h2>No Vehicle Added</h2>
+        <h2>No Vehicle Added</h2>
       {% endif %}
       <a href="{{ url_for('vehicle_registration') }}">
         <button class="btn btn-dark btn-veh btn-large">
