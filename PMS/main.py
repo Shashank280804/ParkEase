@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, url_for, request, flash, redirect  # Web development
 from flask_wtf import FlaskForm  
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin
@@ -179,21 +178,18 @@ def vehicles():
 @parking_system.route("/login", methods=['GET', 'POST'])
 def login():
     form = Loginform()
-    val = True
     if form.validate_on_submit():
-        for user in user_list:
-            if user.usr_email == form.email.data and check_hash(user_hash=user.password, password=form.password.data):
-                    val = True
-                    login_user(user)
-                    return redirect(url_for('home', user_logged_in=current_user.is_authenticated))
-            else:
-                val = False
-        if val == False:
+        # Query the database for the user with the given email
+        user = User.query.filter_by(usr_email=form.email.data).first()
+        
+        if user and check_hash(user_hash=user.password, password=form.password.data):
+            login_user(user)
+            return redirect(url_for('home', user_logged_in=current_user.is_authenticated))
+        else:
             flash('Invalid Email-ID or password')
-    else:
-        print("Not validated")
 
     return render_template("login.html", form=form)
+
 
 
 @parking_system.route("/signup", methods=['GET','POST'])
