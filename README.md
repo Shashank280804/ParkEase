@@ -98,7 +98,8 @@ python main.py
 
 ## Screenshots
 
-![System Architecture](<Screenshot 2024-10-25 002243.png>)
+![Screenshot 2024-10-25 002243](https://github.com/user-attachments/assets/c459ba0a-2c5f-4652-9fc9-97afa805615d)
+
 
 
 
