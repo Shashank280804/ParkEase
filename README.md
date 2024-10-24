@@ -113,6 +113,9 @@ python main.py
 
 ## Screenshots
 
+#### Scanned Number Plate
+![alt text](image.png)
+
 #### Dashboard
 ![Screenshot 2024-10-25 001856](https://github.com/user-attachments/assets/64c0260f-2e25-4294-baab-4eb44fb7b159)
 
