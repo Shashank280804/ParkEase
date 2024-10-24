@@ -98,7 +98,7 @@ python main.py
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/12LkYXWce5H97-k9gIOnrnHOLMOM4ID15/view?usp=sharing, https://drive.google.com/file/d/12xtO-Iu0KtIpgC38TIStJAuvpIrIWcW7/view?usp=sharing, https://drive.google.com/file/d/14Mitj60VWQ-JP5uY6j2i1qX0fqd90s4X/view?usp=sharing, https://drive.google.com/file/d/1HBdypAapkNIahnR1JsXd0PjDvmFNXXKr/view?usp=sharing, https://drive.google.com/file/d/1OUqBuc3vKg248NLG1yvb71uhpd7Ousku/view?usp=sharing, https://drive.google.com/file/d/1QNvQGCwkkw65SaxdeuwSOEDgYd0knJfT/view?usp=sharing, https://drive.google.com/file/d/1ZXC9zkIsjoG7Ub_vfBSZThQK5PghRiLT/view?usp=sharing, https://drive.google.com/file/d/1ZvXuqGqOwuXvkmlj9YADAZnZWTDIpHI8/view?usp=sharing, https://drive.google.com/file/d/1eHqPHlTLYqp-89g_I2i9xlg8w1LEpilC/view?usp=sharing, https://drive.google.com/file/d/1nQL3bCmGXrt0Ov5c6lipU-L1sSET6LsW/view?usp=sharing, https://drive.google.com/file/d/1ws4asZyObS8ecfqVfvmQ2RBIwLZFgNxY/view?usp=sharing)
+![System Architecture](<Screenshot 2024-10-25 002243.png>)
 
 
 
