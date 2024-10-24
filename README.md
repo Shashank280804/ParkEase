@@ -73,8 +73,23 @@ ParkEase is an advanced video analytics solution that automates vehicle plate re
 
 
 ## Documentation
+#### System Architecture
+![Screenshot 2024-10-24 173059](https://github.com/user-attachments/assets/f5411ee1-970a-4ad4-be46-e517157f7174)
 
-[Documentation](https://linktodocumentation)
+#### Block Diagram
+![Screenshot 2024-10-25 002148](https://github.com/user-attachments/assets/20be5c6d-dbcd-4463-b179-6e5df312fcd9)
+
+#### UseCase Diagram
+![Screenshot 2024-10-25 002204](https://github.com/user-attachments/assets/0207061d-2f52-41a5-9cbf-91b93692df9f)
+
+
+#### Activity Diagram
+![Screenshot 2024-10-25 002218](https://github.com/user-attachments/assets/b1bb2b85-e618-4faf-8b84-e7fd6cebef8a)
+
+
+#### Sequence Diagram
+![Screenshot 2024-10-25 002226](https://github.com/user-attachments/assets/6291fac4-2af1-4349-a2fe-d173dd6c909c)
+
 
 
 ## Installation
@@ -98,7 +113,16 @@ python main.py
 
 ## Screenshots
 
-![Screenshot 2024-10-25 002243](https://github.com/user-attachments/assets/c459ba0a-2c5f-4652-9fc9-97afa805615d)
+#### Dashboard
+![Screenshot 2024-10-25 001856](https://github.com/user-attachments/assets/64c0260f-2e25-4294-baab-4eb44fb7b159)
+
+#### Vehicle Registration
+![Screenshot 2024-10-24 234525](https://github.com/user-attachments/assets/7449882f-6ab3-4a5e-93ae-915a28207792)
+
+
+#### Profile
+![Screenshot 2024-10-25 001915](https://github.com/user-attachments/assets/d244bfa8-5234-4a71-8997-1b980cdd0b94)
+
 
 
 
