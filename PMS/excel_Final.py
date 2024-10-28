@@ -8,13 +8,13 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///instance/system.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///system.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
 class LicensePlate(db.Model):
-    __tablename__ ='licenseplate'
+    __tablename__ ='licensceplate'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(20), nullable=False)
     time = db.Column(db.String(20), nullable=False)
@@ -298,7 +298,7 @@ while True:
 # Write the DataFrame to the Excel file
 # df.to_csv('NUMBER_PLATE.csv', index=False)
 
-
+print("Data added to Excel sheet successfully.")
 
 # Release the camera and close all windows
 cap.release()
