@@ -64,6 +64,7 @@ class Vehicle(db.Model):
     vehicle_type = db.Column(db.String(80), nullable=False)
     vehicle_plate = db.Column(db.String(80), nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    vehicle_status = db.Column(db.Boolean, nullable=False)
     plates = relationship('LicensePlate', back_populates='vehicle')
 
     # v_time = db.Column(db.DateTime, nullable=False)
@@ -104,6 +105,7 @@ class VehicleForm(FlaskForm):
     vehicle_name = StringField("VEHICLE NAME:", validators=[DataRequired(), Length(min=2, max=10)])
     vehicle_type = SelectField("Vehicle Type", validators=[DataRequired()], choices=['2-wheeler', '3-wheeler', '4-wheeler'])  # Dropdown
     vehicle_plate = StringField("VEHICLE PLATE NUMBER:", validators=[DataRequired(), Length(min=4, max=10)])
+    status = SelectField("Is vehicle currently in?:", validators=[DataRequired()], choices=['IN', 'OUT'])
     add_veh = SubmitField('Add Vehicle')
 
 
@@ -217,7 +219,11 @@ def vehicle_registration():
     if request.method == 'POST':
         if form.validate_on_submit():
 
-          
+            if form.status.data == 'IN':
+                st = True
+            else:
+                st = False
+
             new_vehicle = Vehicle(vehicle_name=form.vehicle_name.data, vehicle_type=form.vehicle_type.data, vehicle_plate=form.vehicle_plate.data,owner_id=current_user.id)
             db.session.add(new_vehicle)
             db.session.commit()
