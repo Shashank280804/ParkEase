@@ -52,6 +52,7 @@ class LicensePlate(db.Model):
     time = db.Column(db.String(20), nullable=False)
     state = db.Column(db.String(20))
     number = db.Column(db.String(20), nullable=False)
+    vehicle_id = db.Column(db.Integer, db.ForeignKey('vehicles.rfid_no'))
     vehicle = relationship('Vehicle', back_populates='plates')
 
 # ... (existing code)
@@ -60,6 +61,7 @@ class LicensePlate(db.Model):
 
 class Vehicle(db.Model):
     __tablename__ ='vehicles'
+    rfid_no = db.Column(db.Integer, primary_key=True)
     vehicle_name = db.Column(db.String(80), nullable=False)
     vehicle_type = db.Column(db.String(80), nullable=False)
     vehicle_plate = db.Column(db.String(80), nullable=False)
@@ -105,6 +107,7 @@ class VehicleForm(FlaskForm):
     vehicle_name = StringField("VEHICLE NAME:", validators=[DataRequired(), Length(min=2, max=10)])
     vehicle_type = SelectField("Vehicle Type", validators=[DataRequired()], choices=['2-wheeler', '3-wheeler', '4-wheeler'])  # Dropdown
     vehicle_plate = StringField("VEHICLE PLATE NUMBER:", validators=[DataRequired(), Length(min=4, max=10)])
+    rfid_no = StringField("RFID NO:", validators=[DataRequired()])
     status = SelectField("Is vehicle currently in?:", validators=[DataRequired()], choices=['IN', 'OUT'])
     add_veh = SubmitField('Add Vehicle')
 
@@ -224,7 +227,7 @@ def vehicle_registration():
             else:
                 st = False
 
-            new_vehicle = Vehicle(vehicle_name=form.vehicle_name.data, vehicle_type=form.vehicle_type.data, vehicle_plate=form.vehicle_plate.data,owner_id=current_user.id)
+            new_vehicle = Vehicle(vehicle_name=form.vehicle_name.data, vehicle_type=form.vehicle_type.data, vehicle_plate=form.vehicle_plate.data, rfid_no=form.rfid_no.data, vehicle_status=st, owner_id=current_user.id)
             db.session.add(new_vehicle)
             db.session.commit()
             vehicle_list = Vehicle.query.all()  # Get all vehicle information from table.   

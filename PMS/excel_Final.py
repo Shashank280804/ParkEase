@@ -20,11 +20,13 @@ class LicensePlate(db.Model):
     time = db.Column(db.String(20), nullable=False)
     state = db.Column(db.String(20))
     number = db.Column(db.String(20), nullable=False)
+    vehicle_id = db.Column(db.Integer, db.ForeignKey('vehicles.rfid_no'))
     vehicle = relationship('Vehicle', back_populates='plates')
 
 
 class Vehicle(db.Model):
     __tablename__ ='vehicles'
+    rfid_no = db.Column(db.Integer, primary_key=True)
     vehicle_name = db.Column(db.String(80), nullable=False)
     vehicle_type = db.Column(db.String(80), nullable=False)
     vehicle_plate = db.Column(db.String(80), nullable=False)
